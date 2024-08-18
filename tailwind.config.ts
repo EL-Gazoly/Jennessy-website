@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,12 +18,28 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "main-gradient":
+          "linear-gradient(183deg, rgba(26, 86, 219, 0.46) 10.88%, rgba(17, 25, 40, 0.20) 93.31%);",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brand: {
+          50: "#EBF5FF",
+          100: "#E1EFFE",
+          200: "#C3DDFD",
+          300: "#A4CAFE",
+          400: "#76A9FA",
+          500: "#3F83F8",
+          600: "#1C64F2",
+          700: "#1A56DB",
+          800: "#1E429F",
+          900: "#233876",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -75,6 +91,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
