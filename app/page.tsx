@@ -1,4 +1,5 @@
 "use client";
+import AboutUsSection from "./_components/aboutus-section";
 import HeroSecontion from "./_components/hero-section";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
         <HeroSecontion />
       </ParallaxLayer>
       <ParallaxLayer offset={1}>
-        <HeroSecontion />
+        <AboutUsSection />
       </ParallaxLayer>
     </Parallax>
   );

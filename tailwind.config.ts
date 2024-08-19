@@ -21,6 +21,8 @@ const config = {
       backgroundImage: {
         "main-gradient":
           "linear-gradient(183deg, rgba(26, 86, 219, 0.46) 10.88%, rgba(17, 25, 40, 0.20) 93.31%);",
+        "image-gradient":
+          "linear-gradient(180deg, rgba(17, 25, 40, 0.00) 0%, rgba(17, 25, 40, 0.95) 100%);",
       },
       colors: {
         border: "hsl(var(--border))",
