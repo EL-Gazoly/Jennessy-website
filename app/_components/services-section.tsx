@@ -2,8 +2,8 @@ import { Badge } from "@/components/ui/badge";
 import ServiceCard from "./service-card";
 const ServicesSection = () => {
   return (
-    <div className=" w-full h-full flex flex-col p-4 lg:px-10 xl:px-20">
-      <Badge className=" bg-gray-700 text-green-300 w-fit text-[11.5px] mb-3">
+    <div className=" w-full h-full flex flex-col p-4 lg:px-10 xl:px-20 mt-16">
+      <Badge className=" bg-gray-700 text-[#31C48D] font-normal w-fit text-[11.5px] xl:text-lg mb-3 rounded-lg">
         Entrust the task of list generation to our team of experts
       </Badge>
       <h2 className=" text-3xl font-extrabold mb-6">Services:</h2>
