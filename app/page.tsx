@@ -5,18 +5,20 @@ import OurTargtedAudianceSection from "./_components/our-targeted-audiance-secti
 import PricesSection from "./_components/prices/prices-section";
 import ServicesSection from "./_components/services-section";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import WhyChooseUs from "./_components/why-chosse-us";
 export default function Home() {
   return (
-    <Parallax pages={8} className=" w-full h-full">
+    <Parallax pages={9} className=" w-full h-full">
       <ParallaxLayer offset={0} className=" bg-main-gradient">
         <HeroSecontion />
       </ParallaxLayer>
-      <ParallaxLayer offset={1} factor={7}>
+      <ParallaxLayer offset={1} factor={8}>
         <div className=" flex flex-col">
           <AboutUsSection />
           <ServicesSection />
           <OurTargtedAudianceSection />
           <PricesSection />
+          <WhyChooseUs />
         </div>
       </ParallaxLayer>
     </Parallax>
