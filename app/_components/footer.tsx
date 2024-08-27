@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div
       className={cn(
-        " mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
+        " flex-1 h-screen mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
         montserrat.className
       )}
     >
