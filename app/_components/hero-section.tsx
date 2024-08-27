@@ -27,7 +27,7 @@ const HeroSecontion = () => {
             <MailIcon className="w-5 h-5 text-gray-400" />
             <Input
               placeholder="Enter your email"
-              className=" bg-transparent text-white text-sm border-transparent w-[227px] md:w-[268px] lg:w-[283px]"
+              className=" bg-transparent text-white text-sm border-transparent w-[227px] md:w-[268px] lg:w-[283px] outline-none"
             />
             <Button
               size={"sm"}

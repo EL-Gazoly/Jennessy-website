@@ -8,13 +8,10 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import WhyChooseUs from "./_components/why-chosse-us";
 import ContactUsSection from "./_components/contact/contact-us-section";
 import Footer from "./_components/footer";
-import { useWindowSize } from "usehooks-ts";
 
 export default function Home() {
-  const { width = 0, height = 0 } = useWindowSize();
   return (
     <div className="w-full h-full">
-      {/* Parallax effect only for the Hero section */}
       <div className="relative w-full h-screen">
         <Parallax pages={1} className="w-full h-full">
           <ParallaxLayer offset={0} className="bg-main-gradient">
@@ -23,14 +20,26 @@ export default function Home() {
         </Parallax>
       </div>
 
-      {/* Regular sections without parallax */}
+      {/* Regular sections with IDs */}
       <div className="flex flex-col">
-        <AboutUsSection />
-        <ServicesSection />
-        <OurTargtedAudianceSection />
-        <PricesSection />
-        <WhyChooseUs />
-        <ContactUsSection />
+        <section id="about-us">
+          <AboutUsSection />
+        </section>
+        <section id="services">
+          <ServicesSection />
+        </section>
+        <section id="our-targeted-audience">
+          <OurTargtedAudianceSection />
+        </section>
+        <section id="prices">
+          <PricesSection />
+        </section>
+        <section id="why-choose-us">
+          <WhyChooseUs />
+        </section>
+        <section id="contact-us">
+          <ContactUsSection />
+        </section>
         <Footer />
       </div>
     </div>

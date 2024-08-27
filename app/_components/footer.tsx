@@ -5,10 +5,22 @@ import Twitter from "@/public/twitter.svg";
 import Instagram from "@/public/instagram.svg";
 import { Montserrat, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 const Footer = () => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       className={cn(
@@ -34,11 +46,24 @@ const Footer = () => {
       <div className=" flex flex-col gap-y-5 font-bold self-center items-center md:items-start text-left">
         <h3 className=" text-white text-2xl "> Company info</h3>
         <div className=" flex flex-col gap-y-2.5 text-sm ">
-          <span>About Us</span>
-          <span>Services</span>
-          <span>Who We Help</span>
-          <span>How it works</span>
-          <span>Pricing</span>
+          <Link href={"#"} onClick={(e) => handleScroll(e, "about-us")}>
+            About Us
+          </Link>
+          <Link href={"#"} onClick={(e) => handleScroll(e, "services")}>
+            Services
+          </Link>
+          <Link
+            href={"#"}
+            onClick={(e) => handleScroll(e, "our-targeted-audience")}
+          >
+            Who we Help
+          </Link>
+          <Link href={"#"} onClick={(e) => handleScroll(e, "prices")}>
+            Pricing
+          </Link>
+          <Link href={"#"} onClick={(e) => handleScroll(e, "contact-us")}>
+            Contact Us
+          </Link>
         </div>
       </div>
       <div className=" flex flex-col gap-y-6 items-center md:items-start text-left ">
