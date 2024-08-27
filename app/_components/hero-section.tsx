@@ -1,19 +1,33 @@
-import MobileHeader from "./Mobile/MobileHeader";
+" use client";
+import { MobileHeader } from "./Mobile/MobileHeader";
 import Image from "next/image";
 import Pattern from "@/public/pattern.svg";
 import { MailIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Header from "./Header";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 const HeroSecontion = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className=" w-full h-full flex flex-col relative px-4">
+    <div
+      className={cn(
+        " w-full h-full flex flex-col relative  transition-all duration-300",
+        isMenuOpen && ""
+      )}
+    >
       <div className="absolute inset-0 z-10 opacity-65">
         <Image src={Pattern} alt="pattern" layout="fill" objectFit="cover" />
       </div>
-      <div className=" flex flex-col w-full z-20  h-full justify-between mt-5">
+      <div
+        className={cn(
+          " flex flex-col w-full z-20  h-full justify-between transition-all duration-150 ",
+          isMenuOpen ? "" : "mt-5 "
+        )}
+      >
         <Header />
-        <MobileHeader />
+        <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <div className="w-full flex-1 flex flex-col items-center justify-center gap-y-6">
           <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white text-center leading-9">
             Where Service Meets Success

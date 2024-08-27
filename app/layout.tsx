@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Head from "next/head";
 import { cn } from "@/lib/utils";
+import { NextUIProviders } from "@/providers/nextjs-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          {children}
+          <NextUIProviders>{children}</NextUIProviders>
         </ThemeProvider>
       </body>
     </html>

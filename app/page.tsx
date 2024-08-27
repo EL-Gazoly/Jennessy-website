@@ -11,7 +11,7 @@ import Footer from "./_components/footer";
 
 export default function Home() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-[#111928]">
       <div className="relative w-full h-screen">
         <Parallax pages={1} className="w-full h-full">
           <ParallaxLayer offset={0} className="bg-main-gradient">
