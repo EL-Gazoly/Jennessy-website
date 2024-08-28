@@ -128,6 +128,7 @@ const AboutUsSection = () => {
             <TypingEffect
               text="  About Us"
               speed={100}
+              isTypingComplete={isTypingComplete}
               onComplete={handleTypingComplete}
             />
           )}
@@ -135,7 +136,7 @@ const AboutUsSection = () => {
         <motion.p
           className="text-sm mb-6"
           initial="hidden"
-          animate={isTypingComplete ? "visible" : "hidden"}
+          animate={isTypingComplete && isInView ? "visible" : "hidden"}
           variants={pVariants}
         >
           Are you a knowledgeable real estate professional aiming to excel in
@@ -146,14 +147,14 @@ const AboutUsSection = () => {
         <div className="flex items-center gap-x-2 text-brand-400 font-medium text-base">
           <motion.span
             initial="hidden"
-            animate={isTypingComplete ? "visible" : "hidden"}
+            animate={isTypingComplete && isInView ? "visible" : "hidden"}
             variants={textVariants}
           >
             Read More
           </motion.span>
           <motion.div
             initial="hidden"
-            animate={isTypingComplete ? "visible" : "hidden"}
+            animate={isTypingComplete && isInView ? "visible" : "hidden"}
             variants={iconVariants}
           >
             <MoveRightIcon className="h-4 w-4" />
