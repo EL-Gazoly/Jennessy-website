@@ -47,7 +47,7 @@ const ServiceCard = ({ title, body, badge, badgeColor }: ServiceCardProps) => {
         )}
       </CardContent>
       <CardFooter
-        className=" text-lg font-medium text-brand-500 flex items-center gap-x-2"
+        className=" text-lg font-medium text-brand-500 flex items-center gap-x-2 cursor-pointer"
         onClick={() => setReadMore(!readMore)}
       >
         <span>Read More</span>
