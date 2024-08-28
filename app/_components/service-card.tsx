@@ -1,3 +1,4 @@
+" use client";
 type ServiceCardProps = {
   title: string;
   body: string;
@@ -14,7 +15,10 @@ import {
 import { MoveRightIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { ScrollShadow } from "@nextui-org/react";
+import { useState } from "react";
 const ServiceCard = ({ title, body, badge, badgeColor }: ServiceCardProps) => {
+  const [readMore, setReadMore] = useState(false);
   return (
     <Card className=" p-2 sm:p-3 bg-gray-800 border border-gray-700 rounded-lg">
       <CardHeader className=" flex flex-col gap-y-3">
@@ -30,12 +34,29 @@ const ServiceCard = ({ title, body, badge, badgeColor }: ServiceCardProps) => {
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className=" text-sm xl:tex-base text-gray-400 font-normal max-h-[135px] overflow-y-auto">
-        <p>{body}</p>
+      <CardContent className=" text-sm xl:tex-base text-gray-400 font-normal transition-all duration-300 ">
+        {readMore ? (
+          <p> {body}</p>
+        ) : (
+          <ScrollShadow
+            hideScrollBar
+            className=" max-h-[85px] lg:max-h-14 overflow-y-hidden"
+          >
+            {body}
+          </ScrollShadow>
+        )}
       </CardContent>
-      <CardFooter className=" text-lg font-medium text-brand-500 flex items-center gap-x-2">
+      <CardFooter
+        className=" text-lg font-medium text-brand-500 flex items-center gap-x-2"
+        onClick={() => setReadMore(!readMore)}
+      >
         <span>Read More</span>
-        <MoveRightIcon size={20} />
+        <MoveRightIcon
+          size={20}
+          className={` transition-all duration-300 ${
+            readMore && " -rotate-90 transform"
+          }`}
+        />
       </CardFooter>
     </Card>
   );

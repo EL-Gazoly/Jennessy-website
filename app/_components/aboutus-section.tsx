@@ -1,3 +1,4 @@
+"use client";
 import BuildingImage from "@/public/building.png";
 import Image from "next/image";
 import ClapperboardPlay from "@/public/clapperboard-play.svg";
@@ -6,12 +7,18 @@ import { MoveRightIcon } from "lucide-react";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 import TypingEffect from "@/hooks/use-typing-effect";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import { ScrollShadow } from "@nextui-org/react";
 const AboutUsSection = () => {
   const { ref, isInView } = useInView();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [readMore, setReadMore] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -84,12 +91,31 @@ const AboutUsSection = () => {
               </Badge>
               <h3 className="text-2xl font-extrabold mb-1">About US</h3>
               <p className="text-sm mb-6">
-                Are you a knowledgeable real estate professional aiming to excel
-                in your market? Your search ends here! At JENNESSY, we go beyond
-                being a mere call center, we serve as your strategic ally in
-                achieving success.
+                {readMore ? (
+                  <p>
+                    Are you a knowledgeable real estate professional aiming to
+                    excel in your market? Your search ends here! At JENNESSY, we
+                    go beyond being a mere call center, we serve as your
+                    strategic ally in achieving success.
+                  </p>
+                ) : (
+                  isClient && (
+                    <ScrollShadow
+                      className={cn(" max-h-20 overflow-y-hidden ")}
+                      hideScrollBar={!readMore}
+                    >
+                      Are you a knowledgeable real estate professional aiming to
+                      excel in your market? Your search ends here! At JENNESSY,
+                      we go beyond being a mere call center, we serve as your
+                      strategic ally in achieving success.
+                    </ScrollShadow>
+                  )
+                )}
               </p>
-              <div className="flex items-center gap-x-2 text-brand-400 font-medium text-base">
+              <div
+                className="flex items-center gap-x-2 text-brand-400 font-medium text-base cursor-pointer"
+                onClick={() => setReadMore(!readMore)}
+              >
                 <motion.span
                   initial="hidden"
                   animate={isTypingComplete ? "visible" : "hidden"}
@@ -102,7 +128,13 @@ const AboutUsSection = () => {
                   animate={isTypingComplete ? "visible" : "hidden"}
                   variants={iconVariants}
                 >
-                  <MoveRightIcon className="h-4 w-4" />
+                  <MoveRightIcon
+                    className={cn(
+                      "h-4 w-4",
+                      readMore &&
+                        "transform -rotate-90 transition-all duration-300"
+                    )}
+                  />
                 </motion.div>
               </div>
             </div>
@@ -134,21 +166,39 @@ const AboutUsSection = () => {
           )}
         </h3>
         <motion.p
-          className="text-sm mb-6"
+          className="text-sm mb-6 leading-7 transition-all duration-700"
           initial="hidden"
           animate={isTypingComplete && isInView ? "visible" : "hidden"}
           variants={pVariants}
         >
-          Are you a knowledgeable real estate professional aiming to excel in
-          your market? Your search ends here! At JENNESSY, we go beyond being a
-          mere call center, we serve as your strategic ally in achieving
-          success.
+          {readMore ? (
+            <p>
+              Are you a knowledgeable real estate professional aiming to excel
+              in your market? Your search ends here! At JENNESSY, we go beyond
+              being a mere call center, we serve as your strategic ally in
+              achieving success.
+            </p>
+          ) : (
+            isClient && (
+              <ScrollShadow
+                className={cn(" max-h-20 overflow-y-hidden ")}
+                hideScrollBar={!readMore}
+              >
+                Are you a knowledgeable real estate professional aiming to excel
+                in your market? Your search ends here! At JENNESSY, we go beyond
+                being a mere call center, we serve as your strategic ally in
+                achieving success.
+              </ScrollShadow>
+            )
+          )}
         </motion.p>
         <div className="flex items-center gap-x-2 text-brand-400 font-medium text-base">
           <motion.span
             initial="hidden"
             animate={isTypingComplete && isInView ? "visible" : "hidden"}
             variants={textVariants}
+            onClick={() => setReadMore(!readMore)}
+            className="cursor-pointer"
           >
             Read More
           </motion.span>
@@ -157,7 +207,12 @@ const AboutUsSection = () => {
             animate={isTypingComplete && isInView ? "visible" : "hidden"}
             variants={iconVariants}
           >
-            <MoveRightIcon className="h-4 w-4" />
+            <MoveRightIcon
+              className={cn(
+                "h-4 w-4 ",
+                readMore && "transform -rotate-90 transition-all duration-300"
+              )}
+            />
           </motion.div>
         </div>
       </div>
