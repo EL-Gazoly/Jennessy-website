@@ -6,10 +6,13 @@ import Instagram from "@/public/instagram.svg";
 import { Montserrat, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+type FooterProps = {
+  refernce?: React.RefObject<HTMLDivElement>;
+};
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
-const Footer = () => {
+const Footer = ({ refernce }: FooterProps) => {
   const handleScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -24,9 +27,10 @@ const Footer = () => {
   return (
     <div
       className={cn(
-        " flex-1 h-screen mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
+        " z-[5] fixed bottom-0 w-full left-0 flex-1 h-fit mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
         montserrat.className
       )}
+      ref={refernce}
     >
       <div className=" flex flex-col items-center gap-y-3">
         <Image src={Logo} alt="Logo" className=" w-[83px] h-[87px]" />

@@ -47,65 +47,61 @@ const OurTargtedAudianceSection = () => {
           )}
         </h2>
         <div className="mt-6 md:mt-8 xl:mt-14 max-w-full grid grid-cols-2 sm:flex sm:items-center sm:justify-between gap-8">
-          {isTypingComplete && (
-            <>
-              <motion.div
-                custom={0}
-                initial="hidden"
-                animate={isTypingComplete && isInView ? "visible" : "hidden"}
-                variants={cardVariants}
-              >
-                <TargetAudianceCard
-                  title="Roofing Companies"
-                  body="We provide leads for homeowners in need of roofing services."
-                />
-              </motion.div>
-              <motion.div
-                custom={1}
-                initial="hidden"
-                animate={isTypingComplete && isInView ? "visible" : "hidden"}
-                variants={cardVariants}
-              >
-                <TargetAudianceCard
-                  title="Real Estate Agents"
-                  body="We help increase your listings and set more appointments."
-                />
-              </motion.div>
-              <motion.div
-                custom={2}
-                initial="hidden"
-                animate={isTypingComplete && isInView ? "visible" : "hidden"}
-                variants={cardVariants}
-              >
-                <TargetAudianceCard
-                  title="Buy & Hold Investors"
-                  body="We create campaigns to help you acquire more properties."
-                />
-              </motion.div>
-              <motion.div
-                custom={3}
-                initial="hidden"
-                animate={isTypingComplete && isInView ? "visible" : "hidden"}
-                variants={cardVariants}
-              >
-                <TargetAudianceCard
-                  title="Fix & Flippers"
-                  body="We find prime zip codes and off-market deals for profitable flips."
-                />
-              </motion.div>
-              <motion.div
-                custom={4}
-                initial="hidden"
-                animate={isTypingComplete && isInView ? "visible" : "hidden"}
-                variants={cardVariants}
-              >
-                <TargetAudianceCard
-                  title="Sellers & Wholesalers"
-                  body="We identify top markets and distressed sellers, providing over 100 leads daily."
-                />
-              </motion.div>
-            </>
-          )}
+          <motion.div
+            custom={0}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+          >
+            <TargetAudianceCard
+              title="Roofing Companies"
+              body="We provide leads for homeowners in need of roofing services."
+            />
+          </motion.div>
+          <motion.div
+            custom={1}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+          >
+            <TargetAudianceCard
+              title="Real Estate Agents"
+              body="We help increase your listings and set more appointments."
+            />
+          </motion.div>
+          <motion.div
+            custom={2}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+          >
+            <TargetAudianceCard
+              title="Buy & Hold Investors"
+              body="We create campaigns to help you acquire more properties."
+            />
+          </motion.div>
+          <motion.div
+            custom={3}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+          >
+            <TargetAudianceCard
+              title="Fix & Flippers"
+              body="We find prime zip codes and off-market deals for profitable flips."
+            />
+          </motion.div>
+          <motion.div
+            custom={4}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={cardVariants}
+          >
+            <TargetAudianceCard
+              title="Sellers & Wholesalers"
+              body="We identify top markets and distressed sellers, providing over 100 leads daily."
+            />
+          </motion.div>
         </div>
       </div>
     </div>

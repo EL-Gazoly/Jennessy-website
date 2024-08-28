@@ -48,21 +48,21 @@ const ContactUsSection = () => {
           />
         )}
       </h2>
-      {isTypingComplete && (
-        <motion.p
-          className="text-white text-xl font-semibold leading-[125%] mt-2.5 lg:mt-5 lg:text-3xl"
-          initial="hidden"
-          animate={isTypingComplete && isInView ? "visible" : "hidden"}
-          variants={pVariants}
-        >
-          <span className="text-[26px] text-[#007AFF] lg:text-4xl">D</span>o you
-          need to pull a list of motivated sellers? Ready to take your real
-          estate business to the next level? Contact us today to learn how
-          Jennesy can help you generate high-quality leads and grow your client
-          base. Let’s start a conversation
-        </motion.p>
-      )}
-      <div className="relative flex w-full h-full items-center justify-center mt-12 md:mt-[77px] lg:mt-[107px]">
+
+      <motion.p
+        className="text-white text-xl font-semibold leading-[125%] mt-2.5 lg:mt-5 lg:text-3xl"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={pVariants}
+      >
+        <span className="text-[26px] text-[#007AFF] lg:text-4xl">D</span>o you
+        need to pull a list of motivated sellers? Ready to take your real estate
+        business to the next level? Contact us today to learn how Jennesy can
+        help you generate high-quality leads and grow your client base. Let’s
+        start a conversation
+      </motion.p>
+
+      <div className="relative flex w-full h-full items-center justify-center mt-12 md:mt-[77px] lg:mt-[107px] mb-[70px]">
         <div className="absolute inset-0 self-center justify-self-center">
           <Image
             src={LinearPattern}

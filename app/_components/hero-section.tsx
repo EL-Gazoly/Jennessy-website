@@ -82,7 +82,7 @@ const HeroSecontion = () => {
       )}
       ref={ref}
     >
-      <div className="absolute inset-0 z-10 opacity-65">
+      <div className="absolute inset-0 z-10 ">
         <Image src={Pattern} alt="pattern" layout="fill" objectFit="cover" />
       </div>
       <div

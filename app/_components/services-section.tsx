@@ -62,7 +62,7 @@ const ServicesSection = () => {
         <motion.div
           className="xl:col-span-2"
           initial="hidden"
-          animate={isTypingComplete ? "visible" : "hidden"}
+          animate={isInView ? "visible" : "hidden"}
           variants={cardVariantsFromAbove}
         >
           <ServiceCard
@@ -76,7 +76,7 @@ const ServicesSection = () => {
         <motion.div
           className="xl:col-span-3"
           initial="hidden"
-          animate={isTypingComplete && isInView ? "visible" : "hidden"}
+          animate={isInView && isInView ? "visible" : "hidden"}
           variants={cardVariantsFromAbove}
         >
           <ServiceCard
@@ -90,7 +90,7 @@ const ServicesSection = () => {
         <motion.div
           className="xl:col-span-3"
           initial="hidden"
-          animate={isTypingComplete && isInView ? "visible" : "hidden"}
+          animate={isInView && isInView ? "visible" : "hidden"}
           variants={cardVariantsFromBelow}
         >
           <ServiceCard
@@ -104,7 +104,7 @@ const ServicesSection = () => {
         <motion.div
           className="xl:col-span-2"
           initial="hidden"
-          animate={isTypingComplete ? "visible" : "hidden"}
+          animate={isInView ? "visible" : "hidden"}
           variants={cardVariantsFromBelow}
         >
           <ServiceCard

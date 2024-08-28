@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
         <motion.p
           className="text-white text-xl font-semibold leading-[125%] mt-2 lg:mt-5 lg:text-3xl"
           initial="hidden"
-          animate={isTypingComplete && isInView ? "visible" : "hidden"}
+          animate={isInView ? "visible" : "hidden"}
           variants={pVariants}
         >
           <span className="text-[26px] text-[#007AFF] lg:text-4xl">A</span>re

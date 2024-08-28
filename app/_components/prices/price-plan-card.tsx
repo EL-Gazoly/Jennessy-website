@@ -19,7 +19,7 @@ import { CircleCheckIcon } from "lucide-react";
 const PricePlanCard = ({ name, price, features }: PricePlanCardProps) => {
   return (
     <Card
-      className=" w-[390px] h-[547] rounded-lg bg-gray-800 border border-gray-700 p-2"
+      className=" w-[352px] h-[505] lg:w-[390px] rounded-lg bg-gray-800 border border-gray-700 p-2"
       style={{
         boxShadow:
           "0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px 2px 4px -2px rgba(0, 0, 0, 0.05)",

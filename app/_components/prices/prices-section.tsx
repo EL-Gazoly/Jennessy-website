@@ -103,7 +103,7 @@ const PricesSection = () => {
           <motion.div
             key={index}
             initial="hidden"
-            animate={isTypingComplete && isInView ? "visible" : "hidden"}
+            animate={isInView ? "visible" : "hidden"}
             variants={cardVariants[index]}
           >
             <PricePlanCard
