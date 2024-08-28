@@ -9,13 +9,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { z } from "zod";
 import { mailScehma } from "@/schemas/mail-schema";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { useWindowSize } from "usehooks-ts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Form,
   FormField,
@@ -27,8 +27,15 @@ import {
 type SendEmailModelProps = {
   isOpen: boolean;
   onOpenChange: () => void;
+  emailValue: string;
+  setEmailValue: React.Dispatch<React.SetStateAction<string>>;
 };
-const SendEmailModel = ({ isOpen, onOpenChange }: SendEmailModelProps) => {
+const SendEmailModel = ({
+  isOpen,
+  onOpenChange,
+  emailValue,
+  setEmailValue,
+}: SendEmailModelProps) => {
   const { width } = useWindowSize();
   const [key, setKey] = useState(0);
   const form = useForm<z.infer<typeof mailScehma>>({
@@ -58,11 +65,12 @@ const SendEmailModel = ({ isOpen, onOpenChange }: SendEmailModelProps) => {
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         templateParams,
         {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_API_KEYf,
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_API_KEY,
         }
       )
       .then(() => {
         form.reset();
+        setEmailValue("");
         onOpenChange();
       })
       .catch((error) => {
@@ -74,6 +82,12 @@ const SendEmailModel = ({ isOpen, onOpenChange }: SendEmailModelProps) => {
       error: "Email sending failed",
     });
   };
+
+  useEffect(() => {
+    if (emailValue) {
+      form.setValue("email", emailValue);
+    }
+  }, [emailValue]);
   return (
     <Modal
       isOpen={isOpen}

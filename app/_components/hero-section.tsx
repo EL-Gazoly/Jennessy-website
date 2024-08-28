@@ -13,6 +13,7 @@ import { useWindowSize } from "usehooks-ts";
 import TypingEffect from "@/hooks/use-typing-effect";
 import { useDisclosure } from "@nextui-org/react";
 import SendEmailModel from "./send-email-model";
+import { toast } from "sonner";
 const HeroSecontion = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -20,6 +21,21 @@ const HeroSecontion = () => {
   const { width = 0, height = 0 } = useWindowSize();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [emailValue, setEmailValue] = useState("");
+
+  const handelOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailValue(e.target.value);
+  };
+  const handelSubmit = () => {
+    //check if email is valid with regex
+    //send email
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!regex.test(emailValue)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    onOpenChange();
+  };
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -145,12 +161,15 @@ const HeroSecontion = () => {
                       placeholder="Enter your email"
                       className="bg-transparent text-white text-sm border-transparent outline-none "
                       style={{ width: "100%" }}
+                      value={emailValue}
+                      onChange={handelOnChange}
                     />
                   </motion.div>
                   <Button
                     size={"sm"}
                     className="text-white h-8 w-16 rounded-lg text-xs"
-                    onClick={onOpen}
+                    onClick={handelSubmit}
+                    disabled={!emailValue}
                   >
                     Send
                   </Button>
@@ -160,7 +179,12 @@ const HeroSecontion = () => {
           )}
         </div>
       </div>
-      <SendEmailModel isOpen={isOpen} onOpenChange={onOpenChange} />
+      <SendEmailModel
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        emailValue={emailValue}
+        setEmailValue={setEmailValue}
+      />
     </div>
   );
 };
