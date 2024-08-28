@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="hidden lg:flex px-14 py-3 items-center justify-between bg-black/20 rounded-[14px]">
+    <div className="hidden lg:flex px-14 py-3 items-center justify-between bg-black/20 rounded-[14px] mx-20">
       <Logo />
       <div className="flex items-center gap-x-8 text-sm font-medium leading-5 text-white">
         <Link href={"#"} onClick={(e) => handleScroll(e, "about-us")}>
