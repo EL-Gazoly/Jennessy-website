@@ -3,6 +3,7 @@ import Calendery from "@/public/calendery.svg";
 import CalenderyLarage from "@/public/calendery-pc.svg";
 import LinearPattern from "@/public/linear-pattern.svg";
 import Image from "next/image";
+import { InlineWidget } from "react-calendly";
 const ContactUsSection = () => {
   return (
     <div className=" mt-14 flex flex-col gap-y-4  p-4 lg:px-10 xl:px-20 ">
@@ -27,18 +28,9 @@ const ContactUsSection = () => {
             className="object-cover"
           />
         </div>
-        <Image
-          src={Calendery}
-          alt="Calendery"
-          objectFit="cover"
-          className=" w-full h-full max-h-[800px]  lg:hidden relative z-10"
-        />
-        <Image
-          src={CalenderyLarage}
-          alt="Calendery"
-          objectFit="cover"
-          className=" w-full h-full self-center max-w-[895px] max-h-[800px] hidden lg:block  relative z-10"
-        />
+        <div className=" z-10  max-w-[895px] max-h-[800px] self-center w-full h-full">
+          <InlineWidget url="https://calendly.com/jennessy-support/30min" />
+        </div>
       </div>
     </div>
   );
