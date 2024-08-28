@@ -11,13 +11,15 @@ import { cn } from "@/lib/utils";
 import { useInView, motion } from "framer-motion";
 import { useWindowSize } from "usehooks-ts";
 import TypingEffect from "@/hooks/use-typing-effect";
-
+import { useDisclosure } from "@nextui-org/react";
+import SendEmailModel from "./send-email-model";
 const HeroSecontion = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { width = 0, height = 0 } = useWindowSize();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -148,8 +150,9 @@ const HeroSecontion = () => {
                   <Button
                     size={"sm"}
                     className="text-white h-8 w-16 rounded-lg text-xs"
+                    onClick={onOpen}
                   >
-                    Sign up
+                    Send
                   </Button>
                 </motion.div>
               </motion.div>
@@ -157,6 +160,7 @@ const HeroSecontion = () => {
           )}
         </div>
       </div>
+      <SendEmailModel isOpen={isOpen} onOpenChange={onOpenChange} />
     </div>
   );
 };

@@ -1,0 +1,9 @@
+"use client";
+
+import { z } from "zod";
+
+export const mailScehma = z.object({
+  email: z.string().email(),
+  name: z.string().min(3),
+  message: z.string().min(10),
+});
