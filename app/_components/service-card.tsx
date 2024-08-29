@@ -24,7 +24,7 @@ const ServiceCard = ({ title, body, badge, badgeColor }: ServiceCardProps) => {
       <CardHeader className=" flex flex-col gap-y-3">
         <Badge
           className={cn(
-            " bg-gray-700 hover:bg-gray-600  text-[6px] sm:text-[7px] xl:text-[10px] font-medium  max-w-fit ",
+            " bg-gray-700 hover:bg-gray-600 text-[9px] tracking-tighter xl:text-[10px] font-medium  max-w-fit ",
             badgeColor === "green" ? "text-green-400" : " text-purple-400"
           )}
         >
