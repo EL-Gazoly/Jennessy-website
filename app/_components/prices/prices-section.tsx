@@ -13,32 +13,18 @@ const PricesSection = () => {
     setIsTypingComplete(true);
   };
 
-  const cardVariants = [
-    {
-      hidden: { x: -100, opacity: 0 },
-      visible: {
-        x: 0,
-        opacity: 1,
-        transition: { delay: 0.2, duration: 0.7, ease: "easeOut" },
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (i: any) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.4,
+        duration: 0.7,
+        ease: "easeOut",
       },
-    },
-    {
-      hidden: { y: -100, opacity: 0 },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: { delay: 0.3, duration: 0.7, ease: "easeOut" },
-      },
-    },
-    {
-      hidden: { x: 100, opacity: 0 },
-      visible: {
-        x: 0,
-        opacity: 1,
-        transition: { delay: 0.4, duration: 0.7, ease: "easeOut" },
-      },
-    },
-  ];
+    }),
+  };
 
   return (
     <div
@@ -104,7 +90,8 @@ const PricesSection = () => {
             key={index}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            variants={cardVariants[index]}
+            variants={cardVariants}
+            custom={index}
           >
             <PricePlanCard
               name={card.name}

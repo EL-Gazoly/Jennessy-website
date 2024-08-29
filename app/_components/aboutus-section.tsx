@@ -1,5 +1,5 @@
 "use client";
-import BuildingImage from "@/public/building.png";
+import BuildingImage from "@/public/building.svg";
 import Image from "next/image";
 import ClapperboardPlay from "@/public/clapperboard-play.svg";
 import { Badge } from "@/components/ui/badge";

@@ -27,7 +27,7 @@ const Footer = ({ refernce }: FooterProps) => {
   return (
     <div
       className={cn(
-        " z-[5] fixed bottom-0 w-full left-0 flex-1 h-fit mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
+        "fixed bottom-0 w-full left-0 flex-1 h-fit mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center  gap-x-28",
         montserrat.className
       )}
       ref={refernce}
