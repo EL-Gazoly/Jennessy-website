@@ -88,3 +88,15 @@ body,
 .animate-blink {
   animation: blink 1s infinite;
 }
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5; /* Adjust as needed */
+  pointer-events: none; /* Makes the footer non-interactive */
+}
+
+.footer-fixed .footer-content {
+  pointer-events: auto; /* Restores interaction only for the content inside the footer */
+}

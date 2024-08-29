@@ -9,6 +9,8 @@ import WhyChooseUs from "./_components/why-chosse-us";
 import ContactUsSection from "./_components/contact/contact-us-section";
 import Footer from "./_components/footer";
 import { useElementDimensions } from "@/hooks/use-elements-dimentions";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
   const { ref, dimensions } = useElementDimensions();
@@ -24,7 +26,7 @@ export default function Home() {
         </div>
 
         {/* Regular sections with IDs */}
-        <div className="flex flex-col">
+        <div className="flex flex-col z-[99999]">
           <section id="about-us">
             <AboutUsSection />
           </section>
@@ -47,7 +49,7 @@ export default function Home() {
       </div>
       <section
         id="placeholder"
-        className=" z-[1]"
+        className=" z-[5]"
         style={{
           width: dimensions.width,
           height: dimensions.height - 120,
