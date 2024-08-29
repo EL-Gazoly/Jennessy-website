@@ -6,6 +6,7 @@ import Instagram from "@/public/instagram.svg";
 import { Montserrat, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useState } from "react";
 type FooterProps = {
   refernce?: React.RefObject<HTMLDivElement>;
 };
@@ -13,11 +14,14 @@ type FooterProps = {
 const montserrat = Montserrat({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 const Footer = ({ refernce }: FooterProps) => {
+  const [key, setKey] = useState(0);
   const handleScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
     e.preventDefault();
+    setKey((prev) => prev + 1);
+    console.log("clicked");
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -49,7 +53,7 @@ const Footer = ({ refernce }: FooterProps) => {
       </div>
       <div className=" flex flex-col gap-y-5 font-bold self-center items-center md:items-start text-left">
         <h3 className=" text-white text-2xl "> Company info</h3>
-        <div className=" flex flex-col gap-y-2.5 text-sm ">
+        <div className=" flex flex-col gap-y-2.5 text-sm " key={key}>
           <Link href={"#"} onClick={(e) => handleScroll(e, "about-us")}>
             About Us
           </Link>
