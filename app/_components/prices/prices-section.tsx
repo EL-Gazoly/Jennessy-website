@@ -47,42 +47,45 @@ const PricesSection = () => {
       <div className="mt-9 lg:mt-12 flex flex-wrap gap-5 lg:gap-8 xl:gap-10 justify-center lg:justify-start xl:justify-around">
         {[
           {
-            name: "Essential",
+            name: "Starter",
             price: "$1050",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
               { name: "Weekly reports", isAvailable: true },
               { name: "Client success manager", isAvailable: true },
+              { name: "Readymode dialer", isAvailable: true },
               { name: "Data pulling – 15k records", isAvailable: false },
               { name: "Data skiptracing – 15k records", isAvailable: false },
-              { name: "Readymode dialer", isAvailable: false },
+              { name: "Acquisition manager", isAvailable: false },
             ],
           },
           {
-            name: "Standard",
+            name: "Pro",
             price: "$1700",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
               { name: "Weekly reports", isAvailable: true },
               { name: "Client success manager", isAvailable: true },
+              { name: "Readymode dialer", isAvailable: true },
               { name: "Data pulling – 15k records", isAvailable: true },
               { name: "Data skiptracing – 15k records", isAvailable: true },
-              { name: "Readymode dialer", isAvailable: true },
+              { name: "Acquisition manager", isAvailable: false },
             ],
           },
           {
-            name: "Gold",
+            name: "Elite",
             price: "$2800",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
               { name: "Weekly reports", isAvailable: true },
               { name: "Client success manager", isAvailable: true },
+              { name: "Readymode dialer", isAvailable: true },
               { name: "Data pulling – 30k records", isAvailable: true },
               { name: "Data skiptracing – 30k records", isAvailable: true },
-              { name: "Readymode dialer", isAvailable: true },
+              { name: "Acquisition manager", isAvailable: true },
             ],
           },
         ].map((card, index) => (

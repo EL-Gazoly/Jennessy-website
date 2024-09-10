@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -12,14 +12,8 @@ import {
 } from "@nextui-org/react";
 import Logo from "@/components/Logo";
 
-type MobileHeaderProps = {
-  isMenuOpen: boolean;
-  setIsMenuOpen: (value: boolean) => void;
-};
-export const MobileHeader = ({
-  isMenuOpen,
-  setIsMenuOpen,
-}: MobileHeaderProps) => {
+export const MobileHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -35,7 +29,8 @@ export const MobileHeader = ({
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className=" bg-transparent backdrop:blur-none lg:hidden backdrop-filter-none data-[menu-open=true]:bg-background/70 data-[menu-open=true]:w-screen data-[menu-open=true]:mx-0"
+      className=" fixed top-0 left-0 w-full bg-transparent xl:hidden  data-[menu-open=true]:bg-background/70 data-[menu-open=true]:w-screen data-[menu-open=true]:mx-0"
+      style={{ backdropFilter: "blur(20px)" }}
     >
       <NavbarContent>
         <NavbarBrand>

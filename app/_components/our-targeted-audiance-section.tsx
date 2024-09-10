@@ -55,7 +55,7 @@ const OurTargtedAudianceSection = () => {
           >
             <TargetAudianceCard
               title="Roofing Companies"
-              body="We provide leads for homeowners in need of roofing services."
+              body="Our service delivers qualified leads to homeowners requiring roofing solutions."
             />
           </motion.div>
           <motion.div
@@ -66,7 +66,7 @@ const OurTargtedAudianceSection = () => {
           >
             <TargetAudianceCard
               title="Real Estate Agents"
-              body="We help increase your listings and set more appointments."
+              body="Our approach focuses on elevating your listing performance and optimizing the scheduling of appointments."
             />
           </motion.div>
           <motion.div
@@ -77,7 +77,7 @@ const OurTargtedAudianceSection = () => {
           >
             <TargetAudianceCard
               title="Buy & Hold Investors"
-              body="We create campaigns to help you acquire more properties."
+              body="We develop targeted campaigns designed to assist buy-and-hold investors in acquiring additional properties."
             />
           </motion.div>
           <motion.div
@@ -88,7 +88,7 @@ const OurTargtedAudianceSection = () => {
           >
             <TargetAudianceCard
               title="Fix & Flippers"
-              body="We find prime zip codes and off-market deals for profitable flips."
+              body="We source prime zip codes and exclusive off-market deals to facilitate profitable fix-and-flip projects."
             />
           </motion.div>
           <motion.div

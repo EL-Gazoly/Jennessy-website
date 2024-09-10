@@ -51,7 +51,7 @@ const ServicesSection = () => {
       <h2 className="text-3xl font-extrabold mb-6">
         {isInView && (
           <TypingEffect
-            text="Services:"
+            text="  Services:"
             speed={100}
             isTypingComplete={isTypingComplete}
             onComplete={handleTypingComplete}
@@ -66,10 +66,9 @@ const ServicesSection = () => {
           variants={cardVariantsFromAbove}
         >
           <ServiceCard
-            badge=" Unlock Hidden Profits: The Secret Weapon of Leading Real Estate Agents"
-            title="Data Generation"
-            body="We specialize in compiling personalized lists tailored to your specific objectives and delivering them promptly.
-          Our approach ensures efficiency and effectiveness in achieving your goals."
+            badge="Uncover Hidden Profits: The Key Tool for Top Real Estate Agents"
+            title="Data management"
+            body="We excel in developing tailored lists that align perfectly with your specific objectives and deliver them with promptness and precision. Our approach ensures both efficiency and effectiveness in achieving your strategic goals."
             badgeColor="green"
           />
         </motion.div>
@@ -80,10 +79,9 @@ const ServicesSection = () => {
           variants={cardVariantsFromAbove}
         >
           <ServiceCard
-            badge=" Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
+            badge="Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
             title="Cold Calling"
-            body="Elevate your real estate business with a seasoned cold calling professional. Our experts generate high-quality leads precisely aligned with your objectives, ensuring your pipeline is consistently filled with promising opportunities.
-            Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
+            body="Transform your real estate operations with the expertise of our cold-calling professionals. We provide targeted, high-quality leads that match your strategic objectives, keeping your pipeline robust with valuable opportunities. Experience streamlined success through our efficient lead generation and refined ROI strategies."
             badgeColor="purple"
           />
         </motion.div>
@@ -94,10 +92,9 @@ const ServicesSection = () => {
           variants={cardVariantsFromBelow}
         >
           <ServiceCard
-            badge=" Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
-            title="Real Estate Acquisition & Disposition "
-            body="Entrust us with your real estate acquisition needs. We excel in negotiations to maximize your ROI and efficiently manage dispositions to expedite your deals with precision and speed.
-            Streamlined Success: Effortless Dispositions, Expert ROI Maximization."
+            badge="Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
+            title="Real Estate Acquisition & Disposition"
+            body="Rely on us for all your real estate acquisition needs. We specialize in skilled negotiations to enhance your ROI and manage property dispositions with efficiency and accuracy, ensuring swift and effective deal closures. Experience streamlined success with seamless dispositions and expert ROI optimization."
             badgeColor="purple"
           />
         </motion.div>
@@ -108,10 +105,9 @@ const ServicesSection = () => {
           variants={cardVariantsFromBelow}
         >
           <ServiceCard
-            badge=" Accelerate your search for the right contacts with our professional skip tracing services"
+            badge="Speed up finding the right contacts with our expert skip tracing services."
             title="Skip Tracing"
-            body="Accelerate your search for the right contacts with our professional skip tracing services
-            We specialize in locating hard-to-find individuals and providing accurate, up-to-date contact information to enhance your outreach efforts."
+            body="Expedite your search for key contacts with our expert skip tracing services. We specialize in identifying hard-to-reach individuals and delivering precise, current contact information to optimize your outreach efforts."
             badgeColor="green"
           />
         </motion.div>

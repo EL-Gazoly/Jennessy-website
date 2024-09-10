@@ -35,29 +35,8 @@ const ServiceCard = ({ title, body, badge, badgeColor }: ServiceCardProps) => {
         </CardTitle>
       </CardHeader>
       <CardContent className=" text-sm xl:tex-base text-gray-400 font-normal transition-all duration-300 ">
-        {readMore ? (
-          <p> {body}</p>
-        ) : (
-          <ScrollShadow
-            hideScrollBar
-            className=" max-h-[85px] lg:max-h-14 overflow-y-hidden"
-          >
-            {body}
-          </ScrollShadow>
-        )}
+        <p> {body}</p>
       </CardContent>
-      <CardFooter
-        className=" text-lg font-medium text-brand-500 flex items-center gap-x-2 cursor-pointer"
-        onClick={() => setReadMore(!readMore)}
-      >
-        <span>Read More</span>
-        <MoveRightIcon
-          size={20}
-          className={` transition-all duration-300 ${
-            readMore && " -rotate-90 transform"
-          }`}
-        />
-      </CardFooter>
     </Card>
   );
 };

@@ -1,90 +1,63 @@
 " use client";
 import Logo from "@/public/logo.svg";
+import LogoText from "@/public/logo-text.svg";
 import Image from "next/image";
 import Facebook from "@/public/facebook.svg";
 import Twitter from "@/public/twitter.svg";
 import Instagram from "@/public/instagram.svg";
-import { Montserrat, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useState } from "react";
+import { Divider } from "@nextui-org/react";
+import { Alexandria } from "next/font/google";
+
+const alexandria = Alexandria({ subsets: ["latin"] });
 type FooterProps = {
   refernce?: React.RefObject<HTMLDivElement>;
 };
 
-const montserrat = Montserrat({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
 const Footer = ({ refernce }: FooterProps) => {
-  const [key, setKey] = useState(0);
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-    setKey((prev) => prev + 1);
-    console.log("clicked");
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div
       className={cn(
-        "footer-fixed flex-1 h-fit mt-8 md:mt-28 lg:mt-36 bg-gray-700 py-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-y-14 items-center gap-x-28",
-        montserrat.className
+        " w-full flex flex-col gap-y-12 px-10 md:px-20 lg:px-32 pb-10",
+        alexandria.className
       )}
-      ref={refernce}
     >
-      <div className="footer-content flex flex-col items-center gap-y-3">
-        <Image src={Logo} alt="Logo" className="w-[83px] h-[87px]" />
-        <h3 className={cn("text-2xl font-light", inter.className)}>JENNESSY</h3>
+      <div className=" flex flex-col gap-3 items-center">
+        <Image src={Logo} alt="Logo" width={49} height={69} />
+        <Image src={LogoText} alt="Logo" width={152} height={34} />
       </div>
-      <div className="hidden lg:flex flex-col gap-y-5 font-bold text-xs">
-        <h3 className="text-2xl leading-8 tracking-[0.1px]">About US</h3>
-        <span className="tracking-[0.2px] leading-6">
-          Are you a knowledgeable real estate professional aiming to excel in
-          your market? Your search ends here! At JENNESSY, we go beyond being a
-          mere call center, we serve as your strategic ally in achieving
-          success.
-        </span>
-      </div>
-      <div className="footer-content flex flex-col gap-y-5 font-bold self-center items-center md:items-start text-left">
-        <h3 className="text-white text-2xl">Company info</h3>
-        <div className="flex flex-col gap-y-2.5 text-sm">
-          <Link href="#about-us" onClick={(e) => handleScroll(e, "about-us")}>
-            About Us
-          </Link>
-          <Link href="#services" onClick={(e) => handleScroll(e, "services")}>
-            Services
-          </Link>
-          <Link
-            href="#our-targeted-audience"
-            onClick={(e) => handleScroll(e, "our-targeted-audience")}
-          >
-            Who we Help
-          </Link>
-          <Link href="#prices" onClick={(e) => handleScroll(e, "prices")}>
-            Pricing
-          </Link>
-          <Link
-            href="#contact-us"
-            onClick={(e) => handleScroll(e, "contact-us")}
-          >
-            Contact Us
-          </Link>
-        </div>
-      </div>
-      <div className="footer-content flex flex-col gap-y-6 items-center md:items-start text-left">
-        <h3 className="text-2xl font-bold">Get In Touch</h3>
-        <p className="leading-5 font-normal text-sm max-w-[205px] text-center md:text-left">
-          We are the future and you will be there with us.
-        </p>
-        <div className="flex items-center gap-x-5">
-          <Image src={Facebook} alt="Facebook" />
-          <Image src={Twitter} alt="Twitter" />
-          <Image src={Instagram} alt="Instagram" />
+      <div className=" flex flex-col gap-y-8">
+        <Divider className=" bg-white/20" />
+        <div className=" w-full flex flex-col md:flex-row gap-5 items-center justify-between text-xs md:text-sm text-white/75">
+          <span> &copy; 2024 All rights reserved</span>
+          <div className=" flex items-center gap-x-3">
+            <Link href={"#"}>
+              <Image
+                src={Facebook}
+                alt="Facebook"
+                className=" w-5 h-5 lg:w-6 lg:h-6"
+              />
+            </Link>
+            <Link href={"#"}>
+              <Image
+                src={Twitter}
+                alt="Twitter"
+                className=" w-5 h-5 lg:w-6 lg:h-6"
+              />
+            </Link>
+            <Link href={"#"}>
+              <Image
+                src={Instagram}
+                alt="Instagram"
+                className=" w-5 h-5 lg:w-6 lg:h-6"
+              />
+            </Link>
+          </div>
+          <div className=" flex items-center gap-x-5">
+            <Link href={"#"}>Privacy Policy</Link>
+            <Link href={"#"}>Terms of Service</Link>
+          </div>
         </div>
       </div>
     </div>

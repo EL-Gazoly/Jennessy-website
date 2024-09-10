@@ -169,7 +169,7 @@ const SendEmailModel = ({
               {/* <FormErrorMessage message={state.error } />
                     <FormSucessMessage message={state.success} /> */}
               <Button type="submit" size="lg" className="w-full">
-                Sent
+                Send
               </Button>
             </form>
           </Form>

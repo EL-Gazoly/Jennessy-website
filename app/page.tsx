@@ -11,12 +11,16 @@ import Footer from "./_components/footer";
 import { useElementDimensions } from "@/hooks/use-elements-dimentions";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Header from "./_components/Header";
+import { MobileHeader } from "./_components/Mobile/MobileHeader";
 
 export default function Home() {
   const { ref, dimensions } = useElementDimensions();
   return (
     <div className=" w-full h-full flex flex-col">
-      <div className="w-full h-full bg-[#111928] relative z-10 mb-64">
+      <Header />
+      <MobileHeader />
+      <div className="w-full h-full bg-[#111928] relative z-10 ">
         <div className="relative w-full h-screen">
           <Parallax pages={1} className="w-full h-full">
             <ParallaxLayer offset={0} className="bg-main-gradient">
@@ -26,7 +30,7 @@ export default function Home() {
         </div>
 
         {/* Regular sections with IDs */}
-        <div className="flex flex-col z-[99999]">
+        <div className="flex flex-col relative">
           <section id="about-us">
             <AboutUsSection />
           </section>
@@ -45,17 +49,9 @@ export default function Home() {
           <section id="contact-us">
             <ContactUsSection />
           </section>
+          <Footer refernce={ref} />
         </div>
       </div>
-      <section
-        id="placeholder"
-        className=" z-[5]"
-        style={{
-          width: dimensions.width,
-          height: dimensions.height - 120,
-        }}
-      />
-      <Footer refernce={ref} />
     </div>
   );
 }

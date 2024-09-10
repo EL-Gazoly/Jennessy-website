@@ -46,15 +46,16 @@ const WhyChooseUs = () => {
           )}
         </h2>
         <motion.p
-          className="text-white text-xl font-semibold leading-[125%] mt-2 lg:mt-5 lg:text-3xl"
+          className="text-white text-xl font-semibold leading-[125%] mt-2 lg:mt-5 lg:text-[23px]"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={pVariants}
         >
-          <span className="text-[26px] text-[#007AFF] lg:text-4xl">A</span>re
-          you a real estate professional striving for excellence? Partner with
-          us for support in wholesaling, fixing and flipping, and property
-          acquisitions, elevating your business to new heights.
+          <span className="text-lg text-[#007AFF] lg:text-2xl">D</span>edicated
+          to real estate excellence? Join forces with us to refine your
+          wholesaling, property flipping, and acquisition efforts, and elevate
+          your business to unprecedented levels. Experience the Jennesy
+          advantage today.
         </motion.p>
       </div>
     </div>

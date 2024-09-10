@@ -66,7 +66,7 @@ const AboutUsSection = () => {
   return (
     <div
       className={cn(
-        "flex flex-row flex-wrap lg:flex-nowrap gap-x-10 xl:gap-x-20 items-center justify-center lg:items-start p-4 lg:px-10 xl:px-20 transition-opacity duration-1000 ease-in-out"
+        "flex flex-row flex-wrap lg:flex-nowrap gap-x-10 xl:gap-x-20 items-center justify-center  p-4 lg:px-10 xl:px-20 transition-opacity duration-1000 ease-in-out"
       )}
       ref={ref}
     >
@@ -78,75 +78,22 @@ const AboutUsSection = () => {
           className="object-cover rounded-lg"
         />
         <div className="absolute inset-0 bg-[#111928]/60 rounded-lg px-8 flex flex-col py-7">
-          <div className="w-full h-full flex flex-col lg:hidden">
-            <div className="flex items-center gap-x-2.5 mb-4">
-              <Image src={ClapperboardPlay} alt="Clapperboard Play" />
-              <span className="text-white text-base font-semibold">
-                Watch More
-              </span>
-            </div>
+          <div className="w-full h-full flex flex-col lg:hidden items-center justify-center">
             <div>
               <Badge className="text-[#D09138] bg-[#D09138]/25 mb-2">
                 Watch our story
               </Badge>
               <h3 className="text-2xl font-extrabold mb-1">About US</h3>
               <p className="text-sm mb-6">
-                {readMore ? (
+                {isClient ? (
                   <p>
                     Are you a knowledgeable real estate professional aiming to
                     excel in your market? Your search ends here! At JENNESSY, we
                     go beyond being a mere call center, we serve as your
                     strategic ally in achieving success.
                   </p>
-                ) : (
-                  isClient && (
-                    <ScrollShadow
-                      className={cn(" max-h-20 overflow-y-hidden ")}
-                      hideScrollBar={!readMore}
-                    >
-                      Are you a knowledgeable real estate professional aiming to
-                      excel in your market? Your search ends here! At JENNESSY,
-                      we go beyond being a mere call center, we serve as your
-                      strategic ally in achieving success.
-                    </ScrollShadow>
-                  )
-                )}
+                ) : null}
               </p>
-              <div
-                className="flex items-center gap-x-2 text-brand-400 font-medium text-base cursor-pointer"
-                onClick={() => setReadMore(!readMore)}
-              >
-                <motion.span
-                  initial="hidden"
-                  animate={isTypingComplete ? "visible" : "hidden"}
-                  variants={textVariants}
-                >
-                  Read More
-                </motion.span>
-                <motion.div
-                  initial="hidden"
-                  animate={isTypingComplete ? "visible" : "hidden"}
-                  variants={iconVariants}
-                >
-                  <MoveRightIcon
-                    className={cn(
-                      "h-4 w-4",
-                      readMore &&
-                        "transform -rotate-90 transition-all duration-300"
-                    )}
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-full h-full hidden lg:block">
-            <div className="absolute bottom-0 left-0">
-              <div className="flex items-center gap-x-2.5">
-                <Image src={ClapperboardPlay} alt="Clapperboard Play" />
-                <span className="text-white text-base font-semibold">
-                  Watch More
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -171,50 +118,16 @@ const AboutUsSection = () => {
           animate={isTypingComplete && isInView ? "visible" : "hidden"}
           variants={pVariants}
         >
-          {readMore ? (
+          {isClient ? (
             <p>
               Are you a knowledgeable real estate professional aiming to excel
               in your market? Your search ends here! At JENNESSY, we go beyond
               being a mere call center, we serve as your strategic ally in
               achieving success.
             </p>
-          ) : (
-            isClient && (
-              <ScrollShadow
-                className={cn(" max-h-20 overflow-y-hidden ")}
-                hideScrollBar={!readMore}
-              >
-                Are you a knowledgeable real estate professional aiming to excel
-                in your market? Your search ends here! At JENNESSY, we go beyond
-                being a mere call center, we serve as your strategic ally in
-                achieving success.
-              </ScrollShadow>
-            )
-          )}
+          ) : null}
         </motion.p>
-        <div className="flex items-center gap-x-2 text-brand-400 font-medium text-base">
-          <motion.span
-            initial="hidden"
-            animate={isTypingComplete && isInView ? "visible" : "hidden"}
-            variants={textVariants}
-            onClick={() => setReadMore(!readMore)}
-            className="cursor-pointer"
-          >
-            Read More
-          </motion.span>
-          <motion.div
-            initial="hidden"
-            animate={isTypingComplete && isInView ? "visible" : "hidden"}
-            variants={iconVariants}
-          >
-            <MoveRightIcon
-              className={cn(
-                "h-4 w-4 ",
-                readMore && "transform -rotate-90 transition-all duration-300"
-              )}
-            />
-          </motion.div>
-        </div>
+        <div className="flex items-center gap-x-2 text-brand-400 font-medium text-base"></div>
       </div>
     </div>
   );

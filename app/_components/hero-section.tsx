@@ -95,8 +95,7 @@ const HeroSecontion = () => {
   return (
     <div
       className={cn(
-        " w-full h-full flex flex-col relative  transition-all duration-300",
-        isMenuOpen && ""
+        " w-full h-full flex flex-col relative  transition-all duration-300"
       )}
       ref={ref}
     >
@@ -105,12 +104,9 @@ const HeroSecontion = () => {
       </div>
       <div
         className={cn(
-          " flex flex-col w-full z-20  h-full justify-between transition-all duration-150 ",
-          isMenuOpen ? "" : "mt-5 "
+          " flex flex-col w-full z-20  h-full justify-between transition-all duration-150 mt-5"
         )}
       >
-        <Header />
-        <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <div className="w-full flex-1 flex flex-col items-center justify-center gap-y-6 px-4">
           <h1
             className={cn(
