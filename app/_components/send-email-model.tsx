@@ -1,4 +1,4 @@
-" use client";
+"use client";
 import {
   Modal,
   ModalHeader,
@@ -8,8 +8,9 @@ import {
 } from "@nextui-org/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { mailScehma } from "@/schemas/mail-schema";
 import emailjs from "@emailjs/browser";
@@ -24,12 +25,14 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+
 type SendEmailModelProps = {
   isOpen: boolean;
   onOpenChange: () => void;
   emailValue: string;
   setEmailValue: React.Dispatch<React.SetStateAction<string>>;
 };
+
 const SendEmailModel = ({
   isOpen,
   onOpenChange,
@@ -43,6 +46,7 @@ const SendEmailModel = ({
     defaultValues: {
       email: "",
       name: "",
+      number: "", // added default value for phone number
       message: "",
     },
   });
@@ -56,6 +60,7 @@ const SendEmailModel = ({
     const templateParams = {
       from_email: values.email,
       from_name: values.name,
+      from_number: values.number, // added phone number
       message: values.message,
     };
 
@@ -88,6 +93,7 @@ const SendEmailModel = ({
       form.setValue("email", emailValue);
     }
   }, [emailValue]);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -147,6 +153,26 @@ const SendEmailModel = ({
                     </FormItem>
                   )}
                 />
+                {/* New phone number field */}
+                <FormField
+                  control={form.control}
+                  name="number"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="tel"
+                          disabled={false}
+                          placeholder="Phone number"
+                          className=" bg-gray-800 border-gray-700"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <FormField
                   control={form.control}
                   name="message"
@@ -154,20 +180,17 @@ const SendEmailModel = ({
                     <FormItem>
                       <FormLabel>Your Message</FormLabel>
                       <FormControl>
-                        <Input
+                        <Textarea
                           {...field}
-                          type="text"
                           disabled={false}
                           placeholder="Your message"
-                          className=" bg-gray-800 border-gray-700"
+                          className=" bg-gray-800 border-gray-700 h-24 resize-none"
                         />
                       </FormControl>
                     </FormItem>
                   )}
                 />
               </div>
-              {/* <FormErrorMessage message={state.error } />
-                    <FormSucessMessage message={state.success} /> */}
               <Button type="submit" size="lg" className="w-full">
                 Send
               </Button>
