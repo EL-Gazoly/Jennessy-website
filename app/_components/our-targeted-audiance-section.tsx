@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import { useInView } from "@/hooks/use-in-view";
 import TypingEffect from "@/hooks/use-typing-effect";
 import { useState } from "react";
+import RoofingIcon from "@/public/roofting.svg";
+import RealEstateIcon from "@/public/real-state.svg";
+import BuyHoldIcon from "@/public/buy-hold.svg";
+import FixFlipIcon from "@/public/fix-flippers.svg";
+import SellersIcon from "@/public/salers.svg";
 
 const OurTargtedAudianceSection = () => {
   const { ref, isInView } = useInView();
@@ -54,6 +59,7 @@ const OurTargtedAudianceSection = () => {
             variants={cardVariants}
           >
             <TargetAudianceCard
+              image={RoofingIcon}
               title="Roofing Companies"
               body="Our service delivers qualified leads to homeowners requiring roofing solutions."
             />
@@ -65,6 +71,7 @@ const OurTargtedAudianceSection = () => {
             variants={cardVariants}
           >
             <TargetAudianceCard
+              image={RealEstateIcon}
               title="Real Estate Agents"
               body="Our approach focuses on elevating your listing performance and optimizing the scheduling of appointments."
             />
@@ -76,6 +83,7 @@ const OurTargtedAudianceSection = () => {
             variants={cardVariants}
           >
             <TargetAudianceCard
+              image={BuyHoldIcon}
               title="Buy & Hold Investors"
               body="We develop targeted campaigns designed to assist buy-and-hold investors in acquiring additional properties."
             />
@@ -87,6 +95,7 @@ const OurTargtedAudianceSection = () => {
             variants={cardVariants}
           >
             <TargetAudianceCard
+              image={FixFlipIcon}
               title="Fix & Flippers"
               body="We source prime zip codes and exclusive off-market deals to facilitate profitable fix-and-flip projects."
             />
@@ -98,6 +107,7 @@ const OurTargtedAudianceSection = () => {
             variants={cardVariants}
           >
             <TargetAudianceCard
+              image={SellersIcon}
               title="Sellers & Wholesalers"
               body="We identify top markets and distressed sellers, providing over 100 leads daily."
             />

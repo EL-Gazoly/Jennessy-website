@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Image Generating AI Tool",
-  description: "Generate images using AI by Corporatica",
+  description: "Generate images using AI by Corporatica~",
   icons: {
     icon: ["/favicon.ico?v=4"],
     apple: ["/apple-touch-icon.png?v=4"],

@@ -1,5 +1,6 @@
 "use client";
 import BuildingImage from "@/public/building.svg";
+import aboutUsImage from "@/public/about-us.svg";
 import Image from "next/image";
 import ClapperboardPlay from "@/public/clapperboard-play.svg";
 import { Badge } from "@/components/ui/badge";
@@ -72,12 +73,12 @@ const AboutUsSection = () => {
     >
       <div className="relative w-full h-[344px] max-w-[737px]">
         <Image
-          src={BuildingImage}
+          src={aboutUsImage}
           alt="Building"
           fill
           className="object-cover rounded-lg"
         />
-        <div className="absolute inset-0 bg-[#111928]/60 rounded-lg px-8 flex flex-col py-7">
+        <div className="absolute inset-0 bg-[#111928]/30 rounded-lg px-8 flex flex-col py-7">
           <div className="w-full h-full flex flex-col lg:hidden items-center justify-center">
             <div>
               <Badge className="text-[#D09138] bg-[#D09138]/25 mb-2">
