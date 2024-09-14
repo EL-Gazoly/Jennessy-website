@@ -17,6 +17,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { CircleCheckIcon } from "lucide-react";
 const PricePlanCard = ({ name, price, features }: PricePlanCardProps) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <Card
       className=" w-[352px] h-[505] lg:w-[390px] rounded-lg bg-gray-800 border border-gray-700 p-2"
@@ -29,11 +39,14 @@ const PricePlanCard = ({ name, price, features }: PricePlanCardProps) => {
         <span className=" text-gray-400 text-lg xl:text-xl font-normal">
           {name}
         </span>
-        <CardTitle className="  text-white text-4xl font-extrabold flex items-center gap-x-[2px] ">
-          {price}
-          <span className=" text-base text-gray-400 font-medium justify-self-end self-end">
-            /month
-          </span>
+        <CardTitle className="  text-white text-2xl font-extrabold flex items-center gap-x-[2px] ">
+          <Button
+            variant={"ghost"}
+            onClick={(e) => handleScroll(e, "contact-us")}
+            className="text-gray-100 text-2xl font-extrabold p-0 hover:border border-gray-100 hover:p-3 transition-all duration-150"
+          >
+            {price}
+          </Button>
         </CardTitle>
       </CardHeader>
       <CardContent className=" flex flex-col gap-y-[18px]">

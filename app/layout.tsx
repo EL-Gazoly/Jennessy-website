@@ -9,8 +9,8 @@ import { NextUIProviders } from "@/providers/nextjs-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Image Generating AI Tool",
-  description: "Generate images using AI by Corporatica~",
+  title: "Jennesy",
+  description: "Jennsey is a real estate contact center.",
   icons: {
     icon: ["/favicon.ico?v=4"],
     apple: ["/apple-touch-icon.png?v=4"],

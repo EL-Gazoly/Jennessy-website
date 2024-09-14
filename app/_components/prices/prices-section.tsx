@@ -48,7 +48,7 @@ const PricesSection = () => {
         {[
           {
             name: "Starter",
-            price: "$1050",
+            price: "Contact Us",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
@@ -62,7 +62,7 @@ const PricesSection = () => {
           },
           {
             name: "Pro",
-            price: "$1700",
+            price: "Contact Us",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
@@ -76,7 +76,7 @@ const PricesSection = () => {
           },
           {
             name: "Elite",
-            price: "$2800",
+            price: "Contact Us",
             features: [
               { name: "Experienced cold caller", isAvailable: true },
               { name: "Quality control management", isAvailable: true },
