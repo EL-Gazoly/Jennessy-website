@@ -36,17 +36,8 @@ const PricePlanCard = ({ name, price, features }: PricePlanCardProps) => {
       }}
     >
       <CardHeader className=" flex flex-col gap-y-4">
-        <span className=" text-gray-400 text-lg xl:text-xl font-normal">
-          {name}
-        </span>
         <CardTitle className="  text-white text-2xl font-extrabold flex items-center gap-x-[2px] ">
-          <Button
-            variant={"ghost"}
-            onClick={(e) => handleScroll(e, "contact-us")}
-            className="text-gray-100 text-2xl font-extrabold p-0 hover:border border-gray-100 hover:p-3 transition-all duration-150"
-          >
-            {price}
-          </Button>
+          {name}
         </CardTitle>
       </CardHeader>
       <CardContent className=" flex flex-col gap-y-[18px]">
@@ -79,8 +70,9 @@ const PricePlanCard = ({ name, price, features }: PricePlanCardProps) => {
         <Button
           variant={"outline"}
           className=" w-full border border-white rounded-lg bg-transparent text-white"
+          onClick={(e) => handleScroll(e, "contact-us")}
         >
-          Choose plan
+          Contact Us
         </Button>
       </CardFooter>
     </Card>

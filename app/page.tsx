@@ -21,7 +21,7 @@ export default function Home() {
       <Header />
       <MobileHeader />
       <div className="w-full h-full bg-[#111928] relative z-10 ">
-        <div className="relative w-full h-screen">
+        <div className="relative w-full h-screen overflow-hidden">
           <Parallax pages={1} className="w-full h-full">
             <ParallaxLayer offset={0} className="bg-main-gradient">
               <HeroSecontion />

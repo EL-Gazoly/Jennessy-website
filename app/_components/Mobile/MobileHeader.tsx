@@ -33,12 +33,12 @@ export const MobileHeader = () => {
       style={{ backdropFilter: "blur(20px)" }}
     >
       <NavbarContent>
-        <NavbarBrand>
+        <NavbarBrand className=" w-fit">
           <Logo />
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="lg:hidden"
+          className="xl:hidden"
         />
       </NavbarContent>
 
