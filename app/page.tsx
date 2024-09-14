@@ -31,7 +31,7 @@ export default function Home() {
 
         {/* Regular sections with IDs */}
         <div className="flex flex-col relative">
-          <section id="about-us">
+          <section id="about-us" className="overflow-y-hidden">
             <AboutUsSection />
           </section>
           <section id="services">
