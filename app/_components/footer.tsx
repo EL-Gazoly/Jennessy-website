@@ -25,7 +25,10 @@ const Footer = ({ refernce }: FooterProps) => {
     >
       <div className=" flex flex-col gap-3 items-center">
         <Image src={Logo} alt="Logo" width={49} height={69} />
-        <Image src={LogoText} alt="Logo" width={152} height={34} />
+        <div className=" flex items-end ">
+          <Image src={LogoText} alt="Logo" width={152} height={34} />
+          <span className=" text-sm">LLC</span>
+        </div>
       </div>
       <div className=" flex flex-col gap-y-8">
         <Divider className=" bg-white/20" />
