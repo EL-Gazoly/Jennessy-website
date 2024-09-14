@@ -5,6 +5,7 @@ import TypingEffect from "@/hooks/use-typing-effect";
 import { useInView } from "@/hooks/use-in-view";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import WhyChooseUsCard from "./why-choose-us-card";
 
 const WhyChooseUs = () => {
   const { ref, isInView } = useInView();
@@ -13,6 +14,7 @@ const WhyChooseUs = () => {
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
   };
+
   const pVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -24,6 +26,19 @@ const WhyChooseUs = () => {
         ease: "easeOut",
       },
     },
+  };
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.4,
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    }),
   };
 
   return (
@@ -57,6 +72,36 @@ const WhyChooseUs = () => {
           your business to unprecedented levels. Experience the Jennesy
           advantage today.
         </motion.p>
+
+        <div className="mt-9 md:mt-16 lg:mt-14 gap-y-5 gap-x-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center justify-items-center sm:justify-items-start md:justify-items-center xl:justify-around">
+          {[
+            "Specialized Expertise",
+            "Proven Results",
+            "Dedicated Support",
+            "Cutting-Edge Technology",
+          ].map((title, index) => (
+            <motion.div
+              key={title}
+              custom={index}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={cardVariants}
+            >
+              <WhyChooseUsCard
+                title={title}
+                body={
+                  title === "Specialized Expertise"
+                    ? "Unlike generic call centers, we focus exclusively on the real estate market, ensuring we understand your unique needs and challenges."
+                    : title === "Proven Results"
+                    ? "Our approach is data-driven and results-oriented, helping clients achieve a significant return on investment."
+                    : title === "Dedicated Support"
+                    ? "We provide personalized support, weekly updates and meetings to keep you informed about the progress of your campaigns."
+                    : "Utilizing the latest in CRM and call-tracking technology, we maximize efficiency and effectiveness in every campaign."
+                }
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
