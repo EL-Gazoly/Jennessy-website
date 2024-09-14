@@ -67,7 +67,7 @@ const AboutUsSection = () => {
   return (
     <div
       className={cn(
-        "flex flex-row flex-wrap lg:flex-nowrap gap-x-10 xl:gap-x-20 items-center justify-center  p-4 lg:px-10 xl:px-20 transition-opacity duration-1000 ease-in-out"
+        "flex flex-row flex-wrap lg:flex-nowrap gap-x-10 xl:gap-x-20 items-center justify-center  p-4 lg:px-10 xl:px-20 transition-opacity duration-1000 ease-in-out overflow-hidden"
       )}
       ref={ref}
     >
@@ -81,7 +81,7 @@ const AboutUsSection = () => {
         <div className="absolute inset-0 bg-[#111928]/30 rounded-lg px-8 flex flex-col py-7">
           <div className="w-full h-full flex flex-col lg:hidden items-center justify-center">
             <div>
-              <Badge className="text-[#D09138] bg-[#D09138]/25 mb-2">
+              <Badge className="text-[#bc7d24] bg-[#D09138]/25 mb-2">
                 Watch our story
               </Badge>
               <h3 className="text-2xl font-extrabold mb-1">About US</h3>
