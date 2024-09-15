@@ -17,16 +17,12 @@ import { MobileHeader } from "./_components/Mobile/MobileHeader";
 export default function Home() {
   const { ref, dimensions } = useElementDimensions();
   return (
-    <div className=" w-full h-full flex flex-col">
+    <div className=" w-full h-full flex flex-col bg-[#111928] relative">
       <Header />
       <MobileHeader />
-      <div className="w-full h-full bg-[#111928] relative z-10 ">
-        <div className="relative w-full h-screen overflow-hidden">
-          <Parallax pages={1} className="w-full h-full">
-            <ParallaxLayer offset={0} className="bg-main-gradient">
-              <HeroSecontion />
-            </ParallaxLayer>
-          </Parallax>
+      <div className="w-full h-full  relative z-10 ">
+        <div className="sticky w-full h-screen overflow-hidden bg-main-gradient">
+          <HeroSecontion />
         </div>
 
         {/* Regular sections with IDs */}

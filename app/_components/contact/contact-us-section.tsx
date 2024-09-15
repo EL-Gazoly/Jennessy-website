@@ -57,7 +57,7 @@ const ContactUsSection = () => {
       >
         <span className="text-[26px] text-[#007AFF] lg:text-2xl">R</span>eady to
         secure a list of motivated sellers and propel your real estate business
-        to new heights? Get in touch with us today to find out how Jennesy can
+        to new heights? Get in touch with us today to find out how Jennessy can
         support you in generating top-tier leads and expanding your client
         network. Let’s connect.
       </motion.p>

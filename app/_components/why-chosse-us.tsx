@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
       </div>
       <div className="relative p-4 lg:px-10 xl:px-20 flex flex-col gap-y-7 z-10 pb-20 lg:pb-28">
         <Badge className="rounded-lg text-base font-normal lg:text-lg">
-          Experience the Jennesy advantage today.
+          Experience the Jennessy advantage today.
         </Badge>
         <h2 className="text-white text-3xl font-extrabold xl:text-5xl">
           {isInView && (
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
           <span className="text-lg text-[#007AFF] lg:text-2xl">D</span>edicated
           to real estate excellence? Join forces with us to refine your
           wholesaling, property flipping, and acquisition efforts, and elevate
-          your business to unprecedented levels. Experience the Jennesy
+          your business to unprecedented levels. Experience the Jennessy
           advantage today.
         </motion.p>
 

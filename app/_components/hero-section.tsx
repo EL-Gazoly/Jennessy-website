@@ -95,7 +95,7 @@ const HeroSecontion = () => {
   return (
     <div
       className={cn(
-        " w-full h-full flex flex-col relative  transition-all duration-300"
+        " w-full h-full flex flex-col relative  transition-all duration-300 overflow-y-hidden"
       )}
       ref={ref}
     >
@@ -129,9 +129,9 @@ const HeroSecontion = () => {
                 animate={isInView ? "visible" : "hidden"}
                 variants={textVariants}
               >
-                At Jenessy, we put our customers first, helping them grow and
+                At Jennessy, we put our customers first, helping them grow and
                 succeed. We believe in a brighter future with great service.
-                Jenessy: Where service leads to success
+                Jennessy: Where service leads to success
               </motion.p>
               <motion.div
                 className="flex items-center"
