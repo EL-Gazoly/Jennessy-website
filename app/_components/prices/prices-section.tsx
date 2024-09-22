@@ -37,7 +37,7 @@ const PricesSection = () => {
       <h2 className="text-white text-3xl font-extrabold xl:text-5xl">
         {isInView && (
           <TypingEffect
-            text="  Pricing:"
+            text="  Packages:"
             speed={100}
             isTypingComplete={isTypingComplete}
             onComplete={handleTypingComplete}

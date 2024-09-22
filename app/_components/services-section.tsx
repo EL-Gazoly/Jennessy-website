@@ -82,7 +82,7 @@ const ServicesSection = () => {
             badge="Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
             title="Cold Calling"
             body="Transform your real estate operations with the expertise of our cold-calling professionals. We provide targeted, high-quality leads that match your strategic objectives, keeping your pipeline robust with valuable opportunities. Experience streamlined success through our efficient lead generation and refined ROI strategies."
-            badgeColor="purple"
+            badgeColor="yellow"
           />
         </motion.div>
         <motion.div
@@ -95,7 +95,7 @@ const ServicesSection = () => {
             badge="Streamlined Success: Effortless Dispositions, Expert ROI Maximization"
             title="Real Estate Acquisition & Disposition"
             body="Rely on us for all your real estate acquisition needs. We specialize in skilled negotiations to enhance your ROI and manage property dispositions with efficiency and accuracy, ensuring swift and effective deal closures. Experience streamlined success with seamless dispositions and expert ROI optimization."
-            badgeColor="purple"
+            badgeColor="yellow"
           />
         </motion.div>
         <motion.div

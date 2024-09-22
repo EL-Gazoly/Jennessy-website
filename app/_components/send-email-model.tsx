@@ -83,7 +83,7 @@ const SendEmailModel = ({
       });
     toast.promise(promise, {
       loading: "Sending...",
-      success: "Email sent successfully",
+      success: "We have received your email and an email has been sent to you",
       error: "Email sending failed",
     });
   };

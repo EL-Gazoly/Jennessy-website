@@ -68,9 +68,9 @@ const WhyChooseUs = () => {
         >
           <span className="text-lg text-[#007AFF] lg:text-2xl">D</span>edicated
           to real estate excellence? Join forces with us to refine your
-          wholesaling, property flipping, and acquisition efforts, and elevate
-          your business to unprecedented levels. Experience the Jennessy
-          advantage today.
+          wholesaling, property flipping, acquisition efforts and elevate your
+          business to unprecedented levels. Experience the Jennessy advantage
+          today.
         </motion.p>
 
         <div className="mt-9 md:mt-16 lg:mt-14 gap-y-5 gap-x-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center justify-items-center sm:justify-items-start md:justify-items-center xl:justify-around">

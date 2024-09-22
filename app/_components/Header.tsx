@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="hidden z-50 fixed top-[2%] left-[2%] w-[95%] xl:flex px-14 py-3 items-center justify-between bg-black/20 rounded-[14px] backdrop-blur-md">
+    <div className="hidden z-50 fixed top-[2%] left-[2%] w-[95%] lg:flex px-14 py-3 items-center justify-between bg-black/20 rounded-[14px] backdrop-blur-md">
       <Logo />
       <div className="flex items-center gap-x-8 text-sm font-medium leading-5 text-white">
         <Link href={"#"} onClick={(e) => handleScroll(e, "about-us")}>

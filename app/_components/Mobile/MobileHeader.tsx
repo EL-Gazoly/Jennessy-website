@@ -29,7 +29,7 @@ export const MobileHeader = () => {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className=" fixed top-0 left-0 w-full bg-transparent xl:hidden  data-[menu-open=true]:bg-background/70 data-[menu-open=true]:w-screen data-[menu-open=true]:mx-0"
+      className=" fixed top-0 left-0 w-full bg-transparent lg:hidden  data-[menu-open=true]:bg-background/70 data-[menu-open=true]:w-screen data-[menu-open=true]:mx-0"
       style={{ backdropFilter: "blur(20px)" }}
     >
       <NavbarContent>
@@ -38,7 +38,7 @@ export const MobileHeader = () => {
         </NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="xl:hidden"
+          className="lg:hidden"
         />
       </NavbarContent>
 
