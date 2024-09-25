@@ -11,14 +11,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jennesy",
-  description:
-    "turn is teaming up with Cookies and Lemonnade storefronts to dole out custom longboards in our go long!(board) giveaway. Every location has one (1) completely unique design, and with no limit to how many you can win… can you collect them all?!",
+  description: "Jennsey is a real estate contact center.",
   metadataBase: new URL("https://jennessy.net"),
   openGraph: {
     title: `Jennesy`,
     description: "Jennsey is a real estate contact center.",
     url: "https://jennessy.net",
-    siteName: "turn",
+    siteName: "Jennesy",
     images: [
       {
         url: Thumbnail.src,
