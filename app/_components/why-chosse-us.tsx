@@ -9,6 +9,7 @@ import WhyChooseUsCard from "./why-choose-us-card";
 import Proven from "@/public/proven.svg";
 import specialized from "@/public/specialized.svg";
 import Dedicated from "@/public/dedicated.svg";
+import Cutting from "@/public/cutting.svg";
 
 const WhyChooseUs = () => {
   const { ref, isInView } = useInView();
@@ -98,7 +99,7 @@ const WhyChooseUs = () => {
                     ? Proven
                     : title === "Dedicated Support"
                     ? Dedicated
-                    : Dedicated
+                    : Cutting
                 }
                 title={title}
                 body={
