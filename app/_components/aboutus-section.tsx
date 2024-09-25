@@ -101,7 +101,7 @@ const AboutUsSection = () => {
       </div>
       <div className="hidden lg:flex flex-col max-w-[500px] justify-center mt-12">
         <Badge className="text-[#D09138] bg-[#D09138]/25 mb-2 hover:bg-[#D09138]/50 w-fit">
-          Get to know use well
+          Get to know us well
         </Badge>
         <h3 className="text-2xl font-extrabold mb-1">
           {isInView && (

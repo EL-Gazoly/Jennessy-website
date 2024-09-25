@@ -6,6 +6,9 @@ import { useInView } from "@/hooks/use-in-view";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import WhyChooseUsCard from "./why-choose-us-card";
+import Proven from "@/public/proven.svg";
+import specialized from "@/public/specialized.svg";
+import Dedicated from "@/public/dedicated.svg";
 
 const WhyChooseUs = () => {
   const { ref, isInView } = useInView();
@@ -88,6 +91,15 @@ const WhyChooseUs = () => {
               variants={cardVariants}
             >
               <WhyChooseUsCard
+                icon={
+                  title === "Specialized Expertise"
+                    ? specialized
+                    : title === "Proven Results"
+                    ? Proven
+                    : title === "Dedicated Support"
+                    ? Dedicated
+                    : Dedicated
+                }
                 title={title}
                 body={
                   title === "Specialized Expertise"

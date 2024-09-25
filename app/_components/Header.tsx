@@ -30,7 +30,7 @@ const Header = () => {
           Who we Help
         </Link>
         <Link href={"#"} onClick={(e) => handleScroll(e, "prices")}>
-          Pricing
+          Packages
         </Link>
         <Link href={"#"} onClick={(e) => handleScroll(e, "contact-us")}>
           Contact Us

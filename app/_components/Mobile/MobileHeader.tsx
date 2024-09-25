@@ -83,7 +83,7 @@ export const MobileHeader = () => {
             size="lg"
             onClick={(e) => handleScroll(e, "prices")}
           >
-            Pricing
+            Packages
           </Link>
         </NavbarMenuItem>
 
