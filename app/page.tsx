@@ -10,14 +10,22 @@ import ContactUsSection from "./_components/contact/contact-us-section";
 import Footer from "./_components/footer";
 import { useElementDimensions } from "@/hooks/use-elements-dimentions";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "./_components/Header";
 import { MobileHeader } from "./_components/Mobile/MobileHeader";
 
 export default function Home() {
   const { ref, dimensions } = useElementDimensions();
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey((prev) => prev + 1);
+  }, []);
   return (
-    <div className=" w-full h-full flex flex-col bg-[#111928] relative">
+    <div
+      className=" w-full h-full flex flex-col bg-[#111928] relative"
+      key={key}
+    >
       <Header />
       <MobileHeader />
       <div className="w-full h-full  relative z-10 ">
