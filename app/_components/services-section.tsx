@@ -2,13 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import ServiceCard from "./service-card";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import TypingEffect from "@/hooks/use-typing-effect";
+import { TypeAnimation } from "react-type-animation";
 import { useInView } from "framer-motion";
 
 const ServicesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [cursor, setCursor] = useState(true);
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -50,11 +51,16 @@ const ServicesSection = () => {
       </Badge>
       <h2 className="text-3xl font-extrabold mb-6">
         {isInView && (
-          <TypingEffect
-            text="  Services:"
-            speed={100}
-            isTypingComplete={isTypingComplete}
-            onComplete={handleTypingComplete}
+          <TypeAnimation
+            sequence={[
+              "Services:",
+              () => {
+                setIsTypingComplete(true);
+                setCursor(false);
+              },
+            ]}
+            speed={10}
+            cursor={cursor}
           />
         )}
       </h2>

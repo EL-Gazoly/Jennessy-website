@@ -100,3 +100,7 @@ body,
 .footer-fixed .footer-content {
   pointer-events: auto; /* Restores interaction only for the content inside the footer */
 }
+
+.index-module_type__E-SaG::after {
+  color: #1a56db;
+}

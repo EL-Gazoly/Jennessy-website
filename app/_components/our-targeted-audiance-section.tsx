@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import TargetAudianceCard from "./target-audiance-card";
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/use-in-view";
-import TypingEffect from "@/hooks/use-typing-effect";
+import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
 import RoofingIcon from "@/public/roofting.svg";
 import RealEstateIcon from "@/public/real-state.svg";
@@ -15,6 +15,7 @@ import SellersIcon from "@/public/salers.svg";
 const OurTargtedAudianceSection = () => {
   const { ref, isInView } = useInView();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [cursor, setCursor] = useState(true);
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -44,10 +45,16 @@ const OurTargtedAudianceSection = () => {
         </Badge>
         <h2 className="text-3xl font-extrabold 2xl:text-5xl">
           {isInView && (
-            <TypingEffect
-              text="  Who We Serve:"
-              speed={100}
-              onComplete={handleTypingComplete}
+            <TypeAnimation
+              sequence={[
+                "Who We Serve:",
+                () => {
+                  setIsTypingComplete(true);
+                  setCursor(false);
+                },
+              ]}
+              speed={10}
+              cursor={cursor}
             />
           )}
         </h2>

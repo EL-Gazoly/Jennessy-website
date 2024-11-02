@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import PricePlanCard from "./price-plan-card";
-import TypingEffect from "@/hooks/use-typing-effect";
+import { TypeAnimation } from "react-type-animation";
 import { useInView } from "@/hooks/use-in-view";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const PricesSection = () => {
   const { ref, isInView } = useInView();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [cursor, setCursor] = useState(true);
 
   const handleTypingComplete = () => {
     setIsTypingComplete(true);
@@ -36,11 +37,16 @@ const PricesSection = () => {
       </Badge>
       <h2 className="text-white text-3xl font-extrabold xl:text-5xl">
         {isInView && (
-          <TypingEffect
-            text="  Packages:"
-            speed={100}
-            isTypingComplete={isTypingComplete}
-            onComplete={handleTypingComplete}
+          <TypeAnimation
+            sequence={[
+              "Packages:",
+              () => {
+                setIsTypingComplete(true);
+                setCursor(false);
+              },
+            ]}
+            speed={10}
+            cursor={cursor}
           />
         )}
       </h2>

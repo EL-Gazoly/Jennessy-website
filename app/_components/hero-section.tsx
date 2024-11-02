@@ -1,5 +1,4 @@
 "use client";
-import { MobileHeader } from "./Mobile/MobileHeader";
 import Image from "next/image";
 import Pattern from "@/public/pattern.svg";
 import { MailIcon } from "lucide-react";
@@ -10,17 +9,16 @@ import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useInView, motion } from "framer-motion";
 import { useWindowSize } from "usehooks-ts";
-import TypingEffect from "@/hooks/use-typing-effect";
 import { useDisclosure } from "@nextui-org/react";
 import SendEmailModel from "./send-email-model";
+import { TypeAnimation } from "react-type-animation";
 import { toast } from "sonner";
 const HeroSecontion = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { width = 0, height = 0 } = useWindowSize();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpenChange } = useDisclosure();
   const [emailValue, setEmailValue] = useState("");
 
   const handelOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -114,11 +112,14 @@ const HeroSecontion = () => {
               !isTypingComplete && " mb-36"
             )}
           >
-            <TypingEffect
-              text="  Where Service Meets Success"
-              speed={100}
-              onComplete={handleTypingComplete}
-              isTypingComplete={isTypingComplete}
+            <TypeAnimation
+              sequence={[
+                "Where Service Meets Success", // Types the text
+                () => {
+                  setIsTypingComplete(true); // Sets isTypingComplete to true
+                },
+              ]}
+              speed={10}
             />
           </h1>
           {isTypingComplete && (

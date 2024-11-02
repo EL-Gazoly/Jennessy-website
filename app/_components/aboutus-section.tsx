@@ -7,15 +7,15 @@ import { Badge } from "@/components/ui/badge";
 import { MoveRightIcon } from "lucide-react";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
-import TypingEffect from "@/hooks/use-typing-effect";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ScrollShadow } from "@nextui-org/react";
+import { TypeAnimation } from "react-type-animation";
 const AboutUsSection = () => {
   const { ref, isInView } = useInView();
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [readMore, setReadMore] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [cursor, setCursor] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
@@ -105,11 +105,16 @@ const AboutUsSection = () => {
         </Badge>
         <h3 className="text-2xl font-extrabold mb-1">
           {isInView && (
-            <TypingEffect
-              text="  About Us"
-              speed={100}
-              isTypingComplete={isTypingComplete}
-              onComplete={handleTypingComplete}
+            <TypeAnimation
+              sequence={[
+                "About Us:",
+                () => {
+                  setIsTypingComplete(true);
+                  setCursor(false);
+                },
+              ]}
+              speed={10}
+              cursor={cursor}
             />
           )}
         </h3>
